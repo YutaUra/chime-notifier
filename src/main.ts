@@ -10,7 +10,7 @@ const logger = pino(PinoPretty({}));
 
 const DIRECTORY = "examples-recordings";
 // const MAX_BUFFER_SIZE = 1024 * 1024 * 512;
-const BYTE_SIZE_PER_SEC = 31911;
+const BYTE_SIZE_PER_SEC = 31937;
 const SAVE_PER_SEC = 60 * 5;
 
 const options = {
