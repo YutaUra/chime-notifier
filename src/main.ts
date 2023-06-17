@@ -34,7 +34,13 @@ const main = async () => {
     fs.mkdirSync(DIRECTORY);
   }
 
-  const audioRecorder = new AudioRecorder(options, console);
+  const audioRecorder = new AudioRecorder(options, {
+    log: logger.info.bind(logger),
+    info: logger.info.bind(logger),
+    debug: logger.debug.bind(logger),
+    error: logger.error.bind(logger),
+    warn: logger.warn.bind(logger),
+  });
 
   audioRecorder.on("error", function (err) {
     logger.warn("Recording error.", err);
