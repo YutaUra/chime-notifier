@@ -11,7 +11,7 @@ const logger = pino(PinoPretty({}));
 const DIRECTORY = "examples-recordings";
 // const MAX_BUFFER_SIZE = 1024 * 1024 * 512;
 const BYTE_SIZE_PER_SEC = 31937;
-const SAVE_PER_SEC = 60 * 5;
+const SAVE_PER_SEC = 60 * 1;
 
 const options = {
   program: "sox",
@@ -105,6 +105,8 @@ const main = async () => {
 
         // console.log("data", buf.byteLength);
       });
+
+    audioRecorder._childProcess?.stderr.pipe(process.stderr);
   };
 
   startRecording();
